@@ -1,0 +1,22 @@
+pcap_glob: "pcaps/*.pcap"
+top_n: 10
+files:
+  output_dir: "data/"
+  summary: "summary.csv"
+  dns: "dns.csv"
+  topvolume: "topflowsvolume.csv"
+  topduration: "topflowsduration.csv"
+  flowtimeseries: "flowstimeseries.csv"
+  filteredflows: "filteredflows.csv"
+
+timeseries:
+  enabled: true
+  apply_filters: true
+  interval: 100 #ms
+
+filters:
+  enabled: true
+  protocol: "UDP"
+  ports:
+    - "4500(ipsec-nat-t)"
+    # - "4500"
